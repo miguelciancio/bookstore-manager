@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>addNewBook_window</class>
+ <widget class="QMainWindow" name="addNewBook_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>501</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	border: 3px solid rgb(85, 85, 255);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QLabel" name="title_label">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	color: rgb(85, 85, 255);
+
+	margin: 30px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Add New Book</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QWidget" name="">
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="bookTitle_label">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	color: rgb(85, 85, 255);
+	
+	padding: 10px;
+	margin: 10px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Title</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="bookTitle_lineEdit">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	color: rgb(85, 85, 255);
+
+	margin: 10px;
+	padding: 10px;
+	
+	border: 2px solid rgb(85, 85, 255);
+    border-radius: 20px;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="maxLength">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="bookAuthor_label">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	color: rgb(85, 85, 255);
+	
+	padding: 10px;
+	margin: 10px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Author</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="bookAuthor_lineEdit">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	color: rgb(85, 85, 255);
+
+	margin: 10px;
+	padding: 10px;
+	
+	border: 2px solid rgb(85, 85, 255);
+    border-radius: 20px;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="maxLength">
+           <number>50</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="bookQuantity_label">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	color: rgb(85, 85, 255);
+	
+	padding: 10px;
+	margin: 10px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Quantity</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="bookQuantity_lineEdit">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	color: rgb(85, 85, 255);
+
+	margin: 10px;
+	padding: 10px;
+	
+	border: 2px solid rgb(85, 85, 255);
+    border-radius: 20px;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="maxLength">
+           <number>12</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="addNewBook_pushButton">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgba(0, 0, 0, 148);
+	border-radius: 20px;
+
+	height: 70px;
+
+	margin: 30px;
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 85, 255);
+	color: rgb(255, 255, 255);
+	
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QPushButton:pressed {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgba(0, 0, 0, 148);
+	border-radius: 20px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Add</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clearInput_pushButton">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgba(0, 0, 0, 148);
+	border-radius: 20px;
+
+	height: 70px;
+
+	margin: 30px;
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 85, 255);
+	color: rgb(255, 255, 255);
+	
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QPushButton:pressed {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgba(0, 0, 0, 148);
+	border-radius: 20px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="returnMainWindow_pushButton">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgba(0, 0, 0, 148);
+	border-radius: 20px;
+
+	height: 70px;
+
+	margin: 30px;
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 85, 255);
+	color: rgb(255, 255, 255);
+	
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QPushButton:pressed {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgba(0, 0, 0, 148);
+	border-radius: 20px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Return</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
