@@ -97,7 +97,7 @@
        <property name="font">
         <font>
          <family>Arial</family>
-         <pointsize>16</pointsize>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="autoFillBackground">

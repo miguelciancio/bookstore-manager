@@ -1,8 +1,9 @@
 import sqlite3
 
+
 def create_database():
     """Function that creates a database that for a bookshop."""
-    # Creates or opens a databse file called ebookstore.
+    # Creates or opens a database file called ebookstore.
     db = sqlite3.connect('ebookstore.db')
 
     # Get a cursor
@@ -58,6 +59,30 @@ def add_data(id, title=None, author=None, quantity=None):
 
     # Close connection
     db.close()
+
+
+def grab_all_data():
+    """Function that grab all data stored inside books table from ebookstore.db"""
+    # Connect to the database.
+    db = sqlite3.connect('ebookstore.db')
+
+    # Create a cursor
+    cursor = db.cursor()
+
+    # Grab all data and store them into a variable; Return this variable.
+    cursor.execute('''
+        SELECT
+            *
+        FROM
+            books
+    ''')
+
+    records = cursor.fetchall()
+
+    # Close connection
+    db.close()
+
+    return records
 
 
 def check_database():
