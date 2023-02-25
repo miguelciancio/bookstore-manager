@@ -85,6 +85,29 @@ def grab_all_data():
     return records
 
 
+def delete_book_data(id):
+    """Function that deletes a specific book data according to its unique ID number."""
+    # Connect to the database
+    db = sqlite3.connect('ebookstore.db')
+
+    # Create a cursor.
+    cursor = db.cursor()
+
+    # Delete the book's data.
+    cursor.execute("""
+        DELETE FROM
+            books
+        WHERE
+            id = ?
+    """, (id,))
+
+    # Commit the changes
+    db.commit()
+
+    # Close database connection.
+    db.close()
+
+
 def check_database():
     # Open database
     db = sqlite3.connect('ebookstore.db')

@@ -1,12 +1,17 @@
 from PyQt5 import QtWidgets, uic
 import sys
-from ebookstore import create_database, add_data, grab_all_data
+from ebookstore import create_database, add_data, grab_all_data, delete_book_data
 
 
 # Create thew third window.
 class DeleteBookWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()  # Call the inherited classes __init__ method
+
+        # Variables that will receive the number of col or row of the table
+        # from 'delete book' window.
+        self.col, self.row = 0, 0
+
         self.main_window = None
         uic.loadUi('app_gui_3.ui', self)
 
@@ -22,18 +27,24 @@ class DeleteBookWindow(QtWidgets.QMainWindow):
         # Execute function that loads all info of books table from the bookshop database (ebookstore.db).
         self.load_data()
 
+        # Event Listener: capture moment that user selects a specific row of the table from 'delete book' window.
+        self.tableWidget.cellClicked.connect(self.cellClick)
+
+        # Event Listener: capture moment that user clicks on 'delete' button from 'delete book' window.
+        self.deleteBook_pushButton.clicked.connect(self.deleteBook)
+
 
     def load_data(self):
-        datas = grab_all_data()
+        self.datas = grab_all_data()
 
         # Set the total number of rows according to the length of the table books
         # from the ebookstore.db database
-        self.tableWidget.setRowCount(len(datas))
+        self.tableWidget.setRowCount(len(self.datas))
 
         # Get each individual data of each row from the table books and
         # display them into our screen (our table) in a user-friendly way.
         table_row = 0
-        for row in datas:
+        for row in self.datas:
             self.tableWidget.setItem(table_row, 0, QtWidgets.QTableWidgetItem(str(row[0])))
             self.tableWidget.setItem(table_row, 1, QtWidgets.QTableWidgetItem(row[1]))
             self.tableWidget.setItem(table_row, 2, QtWidgets.QTableWidgetItem(row[2]))
@@ -45,6 +56,27 @@ class DeleteBookWindow(QtWidgets.QMainWindow):
         self.main_window = Ui()
         self.main_window.show()
         self.close()
+
+
+    def deleteBook(self):
+        """Functions that actually exclude item from database."""
+        self.cell = []  # List that will store all cells values from the selected row.
+
+        # Here, we iterate through all the rows inside the table and
+        # grab only the selected row by the user.
+        for col in range(len(self.datas[0])):
+            self.cell.append(self.tableWidget.item(self.row, col).text())
+
+        id_number = int(self.cell[0])  # get the ID primary key.
+
+        delete_book_data(id_number)  # Pass ID primary key to a function that delete the data using it as parameter.
+
+        self.load_data()  # Update screen with a new list as soon as user deletes one item from there.
+
+    def cellClick(self, row, col):
+        """Function that sets the row and column that the user selected."""
+        self.row = row
+        self.col = col
 
 
 # Create the second window.
@@ -91,16 +123,6 @@ class Ui(QtWidgets.QMainWindow):
         self.delete_book_window.show()
         self.close()
 
-
-# Create a database and add initial values into it.
-create_database()
-
-# Add initial values to our database.
-add_data(3001, 'A Tale of Two Cities', 'Charles Dickens', 30)
-add_data(3002, "Harry Potter and the Philosopher's Stone", 'J.K. Rowling', 40)
-add_data(3003, 'The Lion, the Witch and the Wardrobe', 'C.S. Lewis', 25)
-add_data(3004, 'The Lord of the Rings', 'J.R.R. Tolkien', 37)
-add_data(3005, 'Alice in Wonderland', 'Lewis Carroll', 12)
 
 # ===== Main Application Execution =====
 app = QtWidgets.QApplication(sys.argv)
