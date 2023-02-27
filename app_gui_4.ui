@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>updateBook_MainWindow</class>
+ <widget class="QMainWindow" name="updateBook_MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Update Book</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	border: 3px solid rgb(85, 85, 255);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>15</number>
+    </property>
+    <property name="topMargin">
+     <number>15</number>
+    </property>
+    <property name="rightMargin">
+     <number>15</number>
+    </property>
+    <property name="bottomMargin">
+     <number>15</number>
+    </property>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QLabel" name="title_label">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	color: rgb(85, 85, 255);
+
+	margin: 30px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Update Book Data</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>1</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableWidget {
+	color: rgb(85, 85, 255);
+	
+	font-family: Arial;
+	font-size: 11px;
+	
+	border: 1px solid rgb(85, 85, 255);
+	
+	margin-left: 30px;
+	margin-right: 30px;
+}</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QPushButton" name="update_pushButton">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgb(85, 85, 255);
+	border-radius: 20px;
+
+	height: 70px;
+
+	margin: 30px;
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 85, 255);
+	color: rgb(255, 255, 255);
+	
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QPushButton:pressed {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgb(85, 85, 255);
+	border-radius: 20px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Update</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="returnMainWindow_pushButton">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgb(85, 85, 255);
+	border-radius: 20px;
+
+	height: 70px;
+
+	margin: 30px;
+}
+
+QPushButton:hover {
+	background-color: rgb(85, 85, 255);
+	color: rgb(255, 255, 255);
+	
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QPushButton:pressed {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 255);
+
+	border: 1px solid rgb(85, 85, 255);
+	border-radius: 20px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Return</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
