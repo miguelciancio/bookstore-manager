@@ -27,6 +27,34 @@ def create_database():
     db.close()
 
 
+def grab_last_id():
+    """Function that returns last ID on the books' table from bookshop database."""
+    # Open and connect to bookshop database.
+    db = sqlite3.connect('ebookstore.db')
+
+    # Get a cursor.
+    cursor = db.cursor()
+
+    # Grab Last ID from database.
+    cursor.execute("""
+        SELECT
+            id
+        FROM
+            books
+        ORDER BY 
+            id
+        DESC
+    """)
+
+    # Return last ID on books table.
+    record = cursor.fetchone()
+
+    # Close database
+    db.close()
+
+    return record
+
+
 def add_data(id, title=None, author=None, quantity=None):
     """Function that adds any a new book to the bookshop database."""
     # Open bookshop database.
