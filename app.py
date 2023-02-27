@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets, uic
 import sys
-from ebookstore import create_database, add_data, grab_all_data, delete_book_data
+from ebookstore import create_database, grab_last_id, add_data, grab_all_data, delete_book_data
 
 
 # Create thew third window.
@@ -84,17 +84,53 @@ class DeleteBookWindow(QtWidgets.QMainWindow):
 class AddNewBookWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()  # Call the inherited classes __init__ method
-        self.main_window = None
         uic.loadUi('app_gui_2.ui', self)  # Load the .ui file
+
+        self.main_window = None
+
+        # Variables that will be used to either add a book or clear all inputs fields at once.
+        self.last_id_book = grab_last_id()
+        self.title = self.bookTitle_lineEdit
+        self.author = self.bookAuthor_lineEdit
+        self.quantity = self.bookQuantity_lineEdit
 
         # Event Listener: capture when user clicks return button.
         self.returnMainWindow_pushButton.clicked.connect(self.returnMainWindow)
+
+        # Event Listener: capture when user clicks 'add' button.
+        self.addNewBook_pushButton.clicked.connect(self.addNewBook)
+
+        # Event Listener: capture when user clicks 'clear' button.
+        # Clear all inputs field.
+        self.clearInput_pushButton.clicked.connect(self.clearInput)
 
     def returnMainWindow(self):
         """Function that return to the main window when user clicks 'return' button."""
         self.main_window = Ui()
         self.main_window.show()
         self.close()
+
+    def addNewBook(self):
+        # Add new data to books table.
+        self.id = self.last_id_book[0] + 1
+        self.add_title = self.title.text().strip().title()
+        self.add_author = self.author.text().strip().title()
+        self.add_quantity = self.quantity.text().strip().title()
+
+        # Add new data to database
+        if not self.add_title or self.add_author or self.add_quantity:
+            pass
+        else:
+            add_data(self.id, self.add_title, self.add_author, self.add_quantity)
+
+        # CLear all inputs fields after successfully add the data into bookshop database.
+        self.clearInput()
+
+    def clearInput(self):
+        """Simple function that clears all input fields at once."""
+        self.title.setText("")
+        self.author.setText("")
+        self.quantity.setText("")
 
 
 #  Create a base class that will load the .ui file in the constructor
