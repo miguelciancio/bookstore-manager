@@ -15,7 +15,7 @@ class DeleteBookWindow(QtWidgets.QMainWindow):
         self.main_window = None
         uic.loadUi('app_gui_3.ui', self)
 
-        # Set-up size of columns
+        # Set-up size of each column.cd
         self.tableWidget.setColumnWidth(0, 100)
         self.tableWidget.setColumnWidth(1, 400)
         self.tableWidget.setColumnWidth(2, 600)
@@ -35,6 +35,7 @@ class DeleteBookWindow(QtWidgets.QMainWindow):
 
 
     def load_data(self):
+        """Function that load all the data stored inside the database table's books and display them all on screen."""
         self.datas = grab_all_data()
 
         # Set the total number of rows according to the length of the table books
