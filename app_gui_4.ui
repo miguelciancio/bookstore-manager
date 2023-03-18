@@ -20,20 +20,8 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="leftMargin">
-     <number>15</number>
-    </property>
-    <property name="topMargin">
-     <number>15</number>
-    </property>
-    <property name="rightMargin">
-     <number>15</number>
-    </property>
-    <property name="bottomMargin">
-     <number>15</number>
-    </property>
     <item>
-     <widget class="QSplitter" name="splitter">
+     <widget class="QSplitter" name="splitter_2">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -60,24 +48,42 @@
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="Line" name="line_2">
+      <widget class="Line" name="line">
+       <property name="styleSheet">
+        <string notr="true">Line {
+	color: rgb(85, 85, 255);
+}</string>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QTableWidget" name="tableWidget">
+      <widget class="QTableWidget" name="books_table">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
-         <verstretch>1</verstretch>
+         <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>-1</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QTableWidget {
 	color: rgb(85, 85, 255);
 	
 	font-family: Arial;
-	font-size: 11px;
+	font-size: 14px;
+
+	text-align: center;
 	
 	border: 1px solid rgb(85, 85, 255);
 	
@@ -85,30 +91,150 @@
 	margin-right: 30px;
 }</string>
        </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::DoubleClicked</set>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <attribute name="horizontalHeaderCascadingSectionResizes">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>85</red>
+           <green>85</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Book Title</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>85</red>
+           <green>85</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Author</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>85</red>
+           <green>85</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Stock Level</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>85</red>
+           <green>85</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </property>
+       </column>
       </widget>
-      <widget class="Line" name="line_3">
+      <widget class="Line" name="line_2">
+       <property name="styleSheet">
+        <string notr="true">Line {
+	color: rgb(85, 85, 255);
+}</string>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSplitter" name="splitter_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <widget class="QPushButton" name="update_pushButton">
-       <property name="font">
-        <font>
-         <family>Arial</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+       <widget class="QPushButton" name="update_book_data_button">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>16</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
@@ -134,22 +260,22 @@ QPushButton:pressed {
 	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Update</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="returnMainWindow_pushButton">
-       <property name="font">
-        <font>
-         <family>Arial</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+        </property>
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="return_main_window_button">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>16</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
@@ -175,10 +301,11 @@ QPushButton:pressed {
 	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Return</string>
-       </property>
+        </property>
+        <property name="text">
+         <string>Return</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>

@@ -93,11 +93,11 @@
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QTableWidget" name="tableWidget">
+      <widget class="QTableWidget" name="books_table">
        <property name="font">
         <font>
          <family>Arial</family>
-         <pointsize>11</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="autoFillBackground">
@@ -105,14 +105,24 @@
        </property>
        <property name="styleSheet">
         <string notr="true">QTableWidget {
-	margin: 0px 30px;
+	color: rgb(85, 85, 255);
+	
+	font-family: Arial;
+	font-size: 14px;
+
+	text-align: center;
+	
+	border: 1px solid rgb(85, 85, 255);
+	
+	margin-left: 30px;
+	margin-right: 30px;
 }</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
        <property name="sizeAdjustPolicy">
-        <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
        </property>
        <property name="autoScrollMargin">
         <number>16</number>
@@ -195,7 +205,7 @@
        </column>
        <column>
         <property name="text">
-         <string>Author</string>
+         <string>Book Title</string>
         </property>
         <property name="font">
          <font>
@@ -220,7 +230,7 @@
        </column>
        <column>
         <property name="text">
-         <string>Book Title</string>
+         <string>Author</string>
         </property>
         <property name="font">
          <font>
@@ -295,7 +305,7 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <widget class="QPushButton" name="deleteBook_pushButton">
+       <widget class="QPushButton" name="delete_button">
         <property name="font">
          <font>
           <family>Arial</family>
@@ -309,7 +319,7 @@
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 
 	height: 70px;
@@ -328,7 +338,7 @@ QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 }</string>
         </property>
@@ -336,7 +346,7 @@ QPushButton:pressed {
          <string>Delete</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="returnMainWindow_pushButton">
+       <widget class="QPushButton" name="return_main_window_button">
         <property name="font">
          <font>
           <family>Arial</family>
@@ -350,7 +360,7 @@ QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 
 	height: 70px;
@@ -369,7 +379,7 @@ QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 }</string>
         </property>
