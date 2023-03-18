@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>501</height>
+    <height>513</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -75,7 +75,7 @@
       <widget class="QWidget" name="layoutWidget">
        <layout class="QFormLayout" name="formLayout">
         <item row="0" column="0">
-         <widget class="QLabel" name="bookTitle_label">
+         <widget class="QLabel" name="book_title_label">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -98,7 +98,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="bookTitle_lineEdit">
+         <widget class="QLineEdit" name="book_title_line">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -125,7 +125,7 @@
          </widget>
         </item>
         <item row="1" column="0">
-         <widget class="QLabel" name="bookAuthor_label">
+         <widget class="QLabel" name="book_author_label">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -148,7 +148,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="bookAuthor_lineEdit">
+         <widget class="QLineEdit" name="book_author_line">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -175,7 +175,7 @@
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QLabel" name="bookQuantity_label">
+         <widget class="QLabel" name="book_quantity_label">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -198,7 +198,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="bookQuantity_lineEdit">
+         <widget class="QLineEdit" name="book_quantity_line">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -229,7 +229,7 @@
       <widget class="QWidget" name="layoutWidget">
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QPushButton" name="addNewBook_pushButton">
+         <widget class="QPushButton" name="add_new_book_button">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -243,7 +243,7 @@
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 
 	height: 70px;
@@ -262,7 +262,7 @@ QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 }</string>
           </property>
@@ -272,7 +272,7 @@ QPushButton:pressed {
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="clearInput_pushButton">
+         <widget class="QPushButton" name="clear_inputs_button">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -286,7 +286,7 @@ QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 
 	height: 70px;
@@ -305,7 +305,7 @@ QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 }</string>
           </property>
@@ -315,7 +315,7 @@ QPushButton:pressed {
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="returnMainWindow_pushButton">
+         <widget class="QPushButton" name="return_main_window_button">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -329,7 +329,7 @@ QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 
 	height: 70px;
@@ -348,7 +348,7 @@ QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
 	color: rgb(85, 85, 255);
 
-	border: 1px solid rgba(0, 0, 0, 148);
+	border: 1px solid rgb(85, 85, 255);
 	border-radius: 20px;
 }</string>
           </property>
