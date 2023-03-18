@@ -55,10 +55,10 @@
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <widget class="QWidget" name="">
+        <widget class="QWidget" name="layoutWidget">
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QPushButton" name="addNewBook_pushButton">
+           <widget class="QPushButton" name="add_new_book_button">
             <property name="font">
              <font>
               <family>Arial</family>
@@ -101,7 +101,7 @@ QPushButton:pressed {
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="deleteBook_pushButton">
+           <widget class="QPushButton" name="delete_book_button">
             <property name="font">
              <font>
               <family>Arial</family>
@@ -140,7 +140,7 @@ QPushButton:pressed {
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="updateBook_pushButton">
+           <widget class="QPushButton" name="update_book_button">
             <property name="font">
              <font>
               <family>Arial</family>
