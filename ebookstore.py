@@ -55,7 +55,7 @@ def grab_last_id():
     return record
 
 
-def add_data(id, title=None, author=None, quantity=None):
+def add_data(id_primary_key, title=None, author=None, quantity=None):
     """Function that adds any a new book to the bookshop database."""
     # Open bookshop database.
     db = sqlite3.connect('ebookstore.db')
@@ -65,7 +65,7 @@ def add_data(id, title=None, author=None, quantity=None):
 
     # Insert the data if not inside it.
     data = [
-        id,
+        id_primary_key,
         title,
         author,
         quantity
@@ -113,7 +113,7 @@ def grab_all_data():
     return records
 
 
-def delete_book_data(id):
+def delete_book_data(id_primary_key):
     """Function that deletes a specific book data according to its unique ID number."""
     # Connect to the database
     db = sqlite3.connect('ebookstore.db')
@@ -127,13 +127,88 @@ def delete_book_data(id):
             books
         WHERE
             id = ?
-    """, (id,))
+    """, (id_primary_key,))
 
     # Commit the changes
     db.commit()
 
     # Close database connection.
     db.close()
+
+
+def update_book_data(item, id_num, column):
+    """Function that update a specific data from that the user wants from the books table of bookshop database."""
+    # ===== UPDATE TITLE ITEMS =====
+    if column == 1:
+        # Open and connect to database.
+        db = sqlite3.connect('ebookstore.db')
+
+        # Get a cursor
+        cursor = db.cursor()
+
+        # Update the data.
+        cursor.execute("""
+            UPDATE 
+                books 
+            SET 
+                title = ? 
+            WHERE 
+                id = ? 
+        """, (item, id_num))
+
+        # Commit change.
+        db.commit()
+
+        # Disconnect and Close database.
+        db.close()
+
+    # ===== UPDATE AUTHOR ITEMS =====
+    elif column == 2:
+        # Open and connect to database.
+        db = sqlite3.connect('ebookstore.db')
+
+        # Get a cursor
+        cursor = db.cursor()
+
+        # Update the data.
+        cursor.execute("""
+            UPDATE 
+                books 
+            SET 
+                author = ? 
+            WHERE 
+                id = ? 
+        """, (item, id_num))
+
+        # Commit change.
+        db.commit()
+
+        # Disconnect and Close database.
+        db.close()
+
+    # ===== UPDATE QUANTITY ITEMS =====
+    else:
+        # Open and connect to database.
+        db = sqlite3.connect('ebookstore.db')
+
+        # Get a cursor
+        cursor = db.cursor()
+
+        # Update the data.
+        cursor.execute("""
+            UPDATE 
+                books 
+            SET 
+                quantity = ? 
+            WHERE 
+                id = ? 
+        """, (item, id_num))
+
+        # Commit change.
+        db.commit()
+
+        # Disconnect and Close database.
+        db.close()
 
 
 def check_database():

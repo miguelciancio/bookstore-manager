@@ -49,7 +49,7 @@
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QHBoxLayout" name="horizontalLayout">
         <property name="leftMargin">
          <number>30</number>
@@ -199,7 +199,7 @@ QPushButton:pressed {
 }</string>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Sunken</enum>
        </property>
        <property name="lineWidth">
         <number>1</number>
@@ -209,6 +209,12 @@ QPushButton:pressed {
        </property>
       </widget>
       <widget class="QTableWidget" name="tableWidget">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">QTableWidget {
 	color: rgb(85, 85, 255);
@@ -222,9 +228,133 @@ QPushButton:pressed {
 	margin-right: 30px;
 }</string>
        </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
        <property name="lineWidth">
         <number>1</number>
        </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::SolidLine</enum>
+       </property>
+       <property name="cornerButtonEnabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="horizontalHeaderCascadingSectionResizes">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>85</red>
+           <green>85</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Book Title</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>85</red>
+           <green>85</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Author</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>85</red>
+           <green>85</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Stock Level</string>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="foreground">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>85</red>
+           <green>85</green>
+           <blue>255</blue>
+          </color>
+         </brush>
+        </property>
+       </column>
       </widget>
       <widget class="Line" name="line_2">
        <property name="styleSheet">
@@ -233,7 +363,7 @@ QPushButton:pressed {
 }</string>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
+        <enum>QFrame::Sunken</enum>
        </property>
        <property name="lineWidth">
         <number>1</number>
