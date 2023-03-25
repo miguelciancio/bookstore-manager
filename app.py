@@ -10,6 +10,12 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         # Here, we load and display the main window.
         super(MainWindow, self).__init__()
+
+        # Setting  the fixed size of window
+        width = 650
+        height = 550
+        self.setFixedSize(width, height)
+
         uic.loadUi('app_gui.ui', self)
         self.show()
 
@@ -61,6 +67,12 @@ class SecondWindow(QtWidgets.QMainWindow):
     def __init__(self):
         # Here, we load and display the second window.
         super(SecondWindow, self).__init__()
+
+        # Setting  the fixed size of window
+        width = 650
+        height = 550
+        self.setFixedSize(width, height)
+
         uic.loadUi('app_gui_2.ui', self)
 
         # Close the second window and open the main window again after user clicks 'return' button.
@@ -135,6 +147,12 @@ class ThirdWindow(QtWidgets.QMainWindow):
     def __init__(self):
         # Here, we load and display the third window.
         super(ThirdWindow, self).__init__()
+
+        # Setting  the fixed size of window
+        width = 650
+        height = 550
+        self.setFixedSize(width, height)
+
         uic.loadUi('app_gui_3.ui', self)
 
         # Set-up size of each column.
@@ -237,6 +255,12 @@ class FourthWindow(ThirdWindow):
     def __init__(self):
         # Here, we load and display the fourth window.
         super(FourthWindow, self).__init__()
+
+        # Setting  the fixed size of window
+        width = 650
+        height = 550
+        self.setFixedSize(width, height)
+
         uic.loadUi('app_gui_4.ui', self)
 
         # Set-up size of each column.
@@ -303,6 +327,12 @@ class FifthWindow(QtWidgets.QMainWindow):
     def __init__(self):
         # Here we load and display the fifth window.
         super(FifthWindow, self).__init__()
+
+        # Setting  the fixed size of window
+        width = 650
+        height = 550
+        self.setFixedSize(width, height)
+        
         uic.loadUi('app_gui_5.ui', self)
 
         # Close the fifth window and open the main window again after user clicks 'return' button.
