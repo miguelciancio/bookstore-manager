@@ -372,7 +372,7 @@ QPushButton:pressed {
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QPushButton" name="returnMainWindow_pushButton">
+      <widget class="QPushButton" name="return_main_window_button">
        <property name="font">
         <font>
          <family>Arial</family>
