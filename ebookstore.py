@@ -66,8 +66,8 @@ def add_data(id_primary_key, title=None, author=None, quantity=None):
     # Insert the data if not inside it.
     data = [
         id_primary_key,
-        title,
-        author,
+        title.title(),
+        author.title(),
         quantity
     ]
 
@@ -154,7 +154,7 @@ def update_book_data(item, id_num, column):
                 title = ? 
             WHERE 
                 id = ? 
-        """, (item, id_num))
+        """, (item.title(), id_num))
 
         # Commit change.
         db.commit()
@@ -178,7 +178,7 @@ def update_book_data(item, id_num, column):
                 author = ? 
             WHERE 
                 id = ? 
-        """, (item, id_num))
+        """, (item.title(), id_num))
 
         # Commit change.
         db.commit()
@@ -209,6 +209,94 @@ def update_book_data(item, id_num, column):
 
         # Disconnect and Close database.
         db.close()
+
+
+def search_book(index, value):
+    """
+    Function that search for a specific book(s) according to what the user wants to use as search parameters.
+    If user wants to search either by ID or Title; returns only one book.
+    If user wants to search by Author name; returns all the books from that specific author.
+    """
+    # ===== SEARCH BOOK BY ID =====
+    if index == 1:
+        # Open and connect to database.
+        db = sqlite3.connect('ebookstore.db')
+
+        # Get a cursor.
+        cursor = db.cursor()
+
+        # Search for a book by its UNIQUE ID NUMBER.
+        cursor.execute("""
+            SELECT
+                *
+            FROM
+                books
+            WHERE
+                ID = ?
+        """, (value,))
+
+        # Fetch the specific data and store into a variable called record.
+        record = cursor.fetchall()
+
+        # Close database.
+        db.close()
+
+        # Return the data that the user wants to.
+        return record
+
+    # ===== SEARCH BOOK BY TITLE =====
+    elif index == 2:
+        # Open and connect to database.
+        db = sqlite3.connect('ebookstore.db')
+
+        # Get a cursor.
+        cursor = db.cursor()
+
+        # Search for a book by its TITLE.
+        cursor.execute("""
+            SELECT
+                *
+            FROM
+                books
+            WHERE
+                title = ?
+        """, (value.title(),))
+
+        # Fetch the specific data and store into a variable called record.
+        record = cursor.fetchall()
+
+        # Close database.
+        db.close()
+
+        # Return the data that the user wants to.
+        return record
+
+    # ===== SEARCH BOOK BY TITLE =====
+    else:
+        # Open and connect to database.
+        db = sqlite3.connect('ebookstore.db')
+
+        # Get a cursor.
+        cursor = db.cursor()
+
+        # Search for all books by its AUTHOR.
+        cursor.execute("""
+            SELECT
+                *
+            FROM
+                books
+            WHERE
+                author = ?
+        """, (value.title(),))
+
+        # Fetch specific datas and store them into a variable called records.
+        records = cursor.fetchall()
+
+        # Close database
+        db.close()
+
+        # Return the datas that the user wants to.
+        return records
 
 
 def check_database():

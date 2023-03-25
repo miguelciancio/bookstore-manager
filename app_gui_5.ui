@@ -64,7 +64,7 @@
          <number>10</number>
         </property>
         <item>
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="combo_box">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -115,7 +115,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="line_edit">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -136,7 +136,7 @@
            <string/>
           </property>
           <property name="maxLength">
-           <number>250</number>
+           <number>150</number>
           </property>
           <property name="frame">
            <bool>true</bool>
@@ -144,13 +144,16 @@
           <property name="echoMode">
            <enum>QLineEdit::Normal</enum>
           </property>
+          <property name="placeholderText">
+           <string>Type here</string>
+          </property>
           <property name="clearButtonEnabled">
            <bool>false</bool>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="searchBook_pushButton">
+         <widget class="QPushButton" name="search_book_button">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -208,7 +211,7 @@ QPushButton:pressed {
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QTableWidget" name="tableWidget">
+      <widget class="QTableWidget" name="books_table">
        <property name="font">
         <font>
          <family>Arial</family>
@@ -237,11 +240,17 @@ QPushButton:pressed {
        <property name="sizeAdjustPolicy">
         <enum>QAbstractScrollArea::AdjustToContents</enum>
        </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
        <property name="alternatingRowColors">
         <bool>true</bool>
        </property>
        <property name="selectionMode">
         <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
        </property>
        <property name="gridStyle">
         <enum>Qt::SolidLine</enum>

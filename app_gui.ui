@@ -180,7 +180,7 @@ QPushButton:pressed {
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="searchBook_pushButton">
+           <widget class="QPushButton" name="search_book_button">
             <property name="font">
              <font>
               <family>Arial</family>
